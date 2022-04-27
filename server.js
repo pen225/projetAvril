@@ -4,6 +4,7 @@ const router = require('./router/route');
 const app = express();
 const cookieParser = require('cookie-parser')
 const session = require('express-session');
+// let path = require('path')
 app.set('views', './views');
 app.set('view engine', 'ejs');
 app.use('/public', express.static('public'));
@@ -22,7 +23,7 @@ app.use(session({
 
 mysqlConnexion.connect((error) => {
     if (error) {
-        
+        console.log("Erreur de connexion à la base de donnée");
     }else{
         console.log('Connexion a la base de donnees reussie');
         app.use('/',router)

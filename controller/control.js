@@ -6,11 +6,12 @@ require('dotenv').config();
 
 const userController = class {
     static accueil = (req = request, res = response) => {
-        if (req.session.dataUser) {
-            res.render('index');
-        }else{
-            res.redirect('/connexion')
-        }
+        // if (req.session.dataUser) {
+        //     res.render('index');
+        // }else{
+        //     res.redirect('/connexion')
+        // }
+        res.render('index');
     }
 
     static getInscription = (req = request, res = response) => {
@@ -18,9 +19,9 @@ const userController = class {
     }
 
     static getConnexion = (req = request, res = response) => {
-        if (req.session.dataUser) {
-            res.redirect('/')
-        }
+        // if (req.session.dataUser) {
+        //     res.redirect('/')
+        // }
         res.render('connexion');
     }
 
@@ -65,9 +66,8 @@ const userController = class {
                     httpOnly: true
                 }
                 res.cookie('jwt', token, cookieOption)
-                req.session.dataUser = user;
-                console.log('req.session.dataUser', req.session.dataUser);
-                res.redirect('/');
+                // req.session.dataUser = user;
+                res.render('index');
             }
         })
         .catch(error => {

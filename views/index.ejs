@@ -9,47 +9,74 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="content">
-        <div class="left">
-            <div class="nav">
-                <div class="clientConnect"><i class="fas fa-user"></i></div>
-                <span>Clients connecés</span>
-            </div>
-            <div class="contentclient">
-                <div class="clientList">
-                    <div class="clientImage"><i class="fas fa-user"></i></div>
-                    <div class="clientInos">
-                        <div class="clientName"> Ouattara Affou</div>
-                        <p></p>
+    <div class="containSite">
+        <!-- Header -->
+        <div class="container">
+            <%- include('header.ejs') %>
+        </div>
+        
+        <!-- footer -->
+        <footer>
+            <div class="container">
+                <div class="main-content">
+                    <div class="left box">
+                      <h2>About us</h2>
+                      <div class="content">
+                        <p>Gaye this is new channel for programming language or technology and science so please support </p>
+                        <div class="social">
+                          <a href="https://facebook.com/coding.np"><span class="fab fa-facebook-f"></span></a>
+                          <a href="#"><span class="fab fa-twitter"></span></a>
+                          <a href="https://instagram.com/coding.np"><span class="fab fa-instagram"></span></a>
+                          <a href="https://youtube.com/c/codingnepal"><span class="fab fa-youtube"></span></a>
+                        </div>
+                      </div>
+                    </div>
+            
+                    <div class="center box">
+                      <h2>Address</h2>
+                      <div class="content">
+                        <div class="place">
+                          <span class="fas fa-map-marker-alt"></span>
+                          <span class="text">Delhi , India</span>
+                        </div>
+                        <div class="phone">
+                          <span class="fas fa-phone-alt"></span>
+                          <span class="text">91- 123456789</span>
+                        </div>
+                        <div class="email">
+                          <span class="fas fa-envelope"></span>
+                          <span class="text">lpw@example.com</span>
+                        </div>
+                      </div>
+                    </div>
+            
+                    <div class="right box">
+                      <h2>Contact us</h2>
+                      <div class="content">
+                        <form action="#">
+                          <div class="email">
+                            <div class="text">Email *</div>
+                            <input type="email" required>
+                          </div>
+                          <div class="msg">
+                            <div class="text">Message *</div>
+                           
+                          </div>
+                          <div class="btn">
+                            <button type="submit">Send</button>
+                          </div>
+                        </form>
+                      </div>
                     </div>
                 </div>
-                <div class="clientList">
-                    <div class="clientImage"><i class="fas fa-user"></i></div>
-                    <div class="clientInos">
-                        <div class="clientName"> Ouattara Affou</div>
-                        <p></p>
-                    </div>
-                </div>
             </div>
-        </div>
-        <div class="right">
-            <div class="nav">
-                <div class="userConnect"><i class="fas fa-user"></i></div>
-                <div>
-                    <span>Penuel Essoh</span>
-                    <span>Clients connecés</span>
-                </div>
-            </div>
-            <form class="form">
-                <div>
-                    <input type="text" placeholder="Tapez un message">
-                    <button type="submit">Send</button>
-                </div>
-            </form>
-        </div>
+            
+            
+        </footer>
     </div>
 
-    <script src="/socket.io/socket.io.js"></script>
+
+
     <script src="../public/js/index.js"></script>
 </body>
 </html>

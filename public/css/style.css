@@ -1,133 +1,227 @@
-/* Couleur de message #d9fdd3 */
-
-
 *{
     margin: 0px;
     padding: 0px;
-    font-family: Helvetica, Arial, sans-serif;
-}
-
-.nav{
-    background-color: #f0f2f5;
-    height: 60px;
-}
-
-.content{
-    height: 100vh;
-    width: 100vw;
-    border-left: 1px solid gray;
-    border-right: 1px solid gray;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    font-family: 'Tw Cen MT', sans-serif;
     box-sizing: border-box;
 }
-
-.left{
-    width: 35%;
-    min-width: 300px;
-    height: 100%;
-    background-color: white;
-    float: left;
+.container{
+    padding: 0 10%;
 }
 
-.right{
-   background: url('../images/pexels-eva-elijas-7641150.jpg') center no-repeat;
-   background-size: cover;
-   background-position: bottom;
-   height: 100%;
-   width: 65%;
-   min-width: 500px;
-   float: right;
+.containSite{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.1)), url('../images/luxury-home-gc015ba7f0_1920.jpg');
+    background-size: cover;
+    background-position: center;
+    /* padding: 0 8%; */
 }
-.left .nav{
+
+/* Navbar */
+nav{
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     align-items: center;
-    padding: 0px 20px;
-    border-bottom: 1px solid rgb(184, 184, 184);
-    border-right: 1px solid rgb(184, 184, 184);
+    padding: 5px 0;
 }
 
-.clientConnect{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    background-color: rgb(220, 217, 217);
+nav .logo{
+    width: 120px;
+    cursor: pointer;
 }
-
-.clientConnect .fas{
-    color: white;
-    font-size: 2.1em;
-}
-
-/* .contentclient{
-    overflow: auto;
-} */
-
-.clientList{
-    display: flex;
-    align-items: center;
-    height: 80px;
-    padding-left: 13px;
-}
-
-.clientList:hover{
-    background-color: #f0f2f5;
-}
-
-.clientList .clientImage{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    background-color: rgb(184, 184, 184);
-}
-
-.clientList .clientInos{
-    height: 100%;
-    margin-left: 20px;
-    /* border-top: 1px solid rgb(220, 217, 217); */
-    border-bottom: 1px solid rgb(220, 217, 217);
-    flex: 1;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-}
-
-.right .nav{
+nav ul{
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 0px 20px;
-    border-bottom: 1px solid rgb(184, 184, 184);
-    border-right: 1px solid rgb(184, 184, 184);
+    flex-wrap: wrap;
+    list-style-type: none;
 }
 
-.userConnect{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    background-color: rgb(220, 217, 217);
+ul li{
+    margin-right: 10px;
 }
 
-/* .userConnect .fas{
-    color: white;
-    font-size: 2.1em;
-} */
+ul li a{
+    position: relative;
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+}
 
-.form{
-    background-color: #f0f2f5a4;
-    height: 60px;
+ul li a::after{
+    content: '';
+    position: absolute;
+    background: rgb(255, 183, 0);
+    bottom: 0px;
+    right: 0px;
+    width: 0%;
+    height: 3px;
+    transform: translate(-50%, -5px);
+    transition: 0.3s;
+}
+
+ul li a:hover::after{
+    width: 38%;
+}
+
+
+/* Footer */
+footer{
     position: fixed;
     bottom: 0px;
+    background: rgba(255, 255, 255, 0.869);
+    width: 100%;
+}
+
+.main-content{
+    display: flex;
+    align-items: center;
+}
+
+.main-content .box{
+    flex-basis: 50%;
+    padding: 10px 20px;
+}
+
+.box h2{
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.box .content{
+margin: 20px 0 0 0;
+position: relative;
+}
+
+.box .content:before{
+    position: absolute;
+    content: '';
+    top: -10px;
+    height: 2px;
+    width: 100%;
+    background: #1a1a1a;
+}
+.box .content:after{
+position: absolute;
+content: '';
+height: 2px;
+width: 15%;
+background: #f12020;
+top: -10px;
+}
+
+.left .content p{
+    text-align: justify;
+}
+.left .content .social{
+margin: 20px 0 0 0;
+}
+.left .content .social a{
+padding: 0 2px;
+}
+.left .content .social a span{
+height: 40px;
+width: 40px;
+background: #1a1a1a;
+line-height: 40px;
+text-align: center;
+font-size: 18px;
+border-radius: 5px;
+transition: 0.3s;
+}
+.left .content .social a span:hover{
+background: orange;
+}
+.center .content .fas{
+font-size: 1.4375rem;
+background: #1a1a1a;
+height: 45px;
+width: 45px;
+line-height: 45px;
+text-align: center;
+border-radius: 50%;
+transition: 0.3s;
+cursor: pointer;
+}
+.center .content .fas:hover{
+background: orange;
+}
+.center .content .text{
+font-size: 1.0625rem;
+font-weight: 500;
+padding-left: 10px;
+}
+.center .content .phone{
+margin: 15px 0;
+}
+.right form .text{
+font-size: 1.0625rem;
+margin-bottom: 2px;
+color: #656565;
+}
+.right form .msg{
+margin-top: 10px;
+}
+.right form input, .right form textarea{
+width: 100%;
+font-size: 1.0625rem;
+background: #151515;
+padding-left: 10px;
+border: 1px solid #222222;
+}
+.right form input:focus,
+.right form textarea:focus{
+outline-color: #3498db;
+}
+.right form input{
+height: 35px;
+}
+.right form .btn{
+margin-top: 10px;
+}
+.right form .btn button{
+height: 40px;
+width: 100%;
+border: none;
+outline: none;
+background: orange;
+font-size: 1.0625rem;
+font-weight: 500;
+cursor: pointer;
+transition: .3s;
+}
+.right form .btn button:hover{
+background: #000;
+}
+.bottom center{
+padding: 5px;
+font-size: 0.9375rem;
+background: #151515;
+}
+.bottom center span{
+color: #656565;
+}
+.bottom center a{
+color: #f12020;
+text-decoration: none;
+}
+.bottom center a:hover{
+text-decoration: underline;
+}
+
+@media screen and (max-width: 900px) {
+    footer{
+      position: relative;
+      bottom: 0px;
+    }
+    .main-content{
+      flex-wrap: wrap;
+      flex-direction: column;
+    }
+    .main-content .box{
+      margin: 5px 0;
+    }
 }
