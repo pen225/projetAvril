@@ -2,7 +2,9 @@ const bcrypt = require('bcryptjs')
 const {request, response} = require('express');
 const userQuery = require('../query');
 let jwt = require('jsonwebtoken');
+const {validationResult} = require('express-validator');
 require('dotenv').config();
+
 
 const userController = class {
     static accueil = (req = request, res = response) => {
@@ -22,27 +24,37 @@ const userController = class {
         // if (req.session.dataUser) {
         //     res.redirect('/')
         // }
-        res.render('connexion');
+        res.render('connexion', {message: ''});
     }
 
     static postInscription = (req = request, res = response) => {
-        let {nom, prenom, email, password, repeatPassword} = req.body;
-        userQuery.verifEmail(req.body)
-        .then(success => {
-            console.log('success', success);
-            if (success.length > 0) {
-                return res.render('inscription', {message: 'Email exist'});
-            } else if (password !== repeatPassword) {
-                return res.render('inscription', {message: 'Les mot de passe n\'est pas conforme'});
-            } else{
-                userQuery.insertUser(req.body)
-                return res.redirect('/connexion')
-            }
-            
-        })
-        .catch(error => {
-            console.log(error);
-        })
+        const errors = validationResult(req);
+        const erreurs = validationResult(req)
+        if(!erreurs.isEmpty()){
+            const alert =erreurs.mapped()
+            // console.log('erreur',alert)
+            res.render('inscription',{
+                alert:alert
+            })
+        }else{
+            let {nom, prenom, email, password, repeatPassword} = req.body;
+            userQuery.verifEmail(req.body)
+            .then(success => {
+                console.log('success', success);
+                if (success.length > 0) {
+                    return res.render('inscription', {message: 'Email exist'});
+                } else if (password !== repeatPassword) {
+                    return res.render('inscription', {message: 'Les mot de passe n\'est pas conforme'});
+                } else{
+                    userQuery.insertUser(req.body)
+                    return res.redirect('/connexion')
+                }
+                
+            })
+            .catch(error => {
+                console.log(error);
+            })
+        }
     }
 
     static postConnexion = (req = request, res = response) => {
@@ -51,7 +63,6 @@ const userController = class {
         .then(success => {
             console.log('connexion', success);
             if (success.length == 0 || ! (bcrypt.compareSync(password, success[0].password))) {
-                console.log('Email ou mot de passe incorrect');
                 return res.render('connexion', {message: 'Email ou mot de passe incorrect'});
             } else {
                 const id = success[0].user_id;

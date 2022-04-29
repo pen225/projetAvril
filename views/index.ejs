@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/a6db07c55e.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://kit.fontawesome.com/a6db07c55e.js" crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="../public/fontawesome-free-6.0.0-web/css/all.css">
     <link rel="stylesheet" href="../public/css/style.css">
     <title>Document</title>
 </head>
@@ -14,65 +15,11 @@
         <div class="container">
             <%- include('header.ejs') %>
         </div>
+
+        <!-- Body -->
         
         <!-- footer -->
-        <footer>
-            <div class="container">
-                <div class="main-content">
-                    <div class="left box">
-                      <h2>About us</h2>
-                      <div class="content">
-                        <p>Gaye this is new channel for programming language or technology and science so please support </p>
-                        <div class="social">
-                          <a href="https://facebook.com/coding.np"><span class="fab fa-facebook-f"></span></a>
-                          <a href="#"><span class="fab fa-twitter"></span></a>
-                          <a href="https://instagram.com/coding.np"><span class="fab fa-instagram"></span></a>
-                          <a href="https://youtube.com/c/codingnepal"><span class="fab fa-youtube"></span></a>
-                        </div>
-                      </div>
-                    </div>
-            
-                    <div class="center box">
-                      <h2>Address</h2>
-                      <div class="content">
-                        <div class="place">
-                          <span class="fas fa-map-marker-alt"></span>
-                          <span class="text">Delhi , India</span>
-                        </div>
-                        <div class="phone">
-                          <span class="fas fa-phone-alt"></span>
-                          <span class="text">91- 123456789</span>
-                        </div>
-                        <div class="email">
-                          <span class="fas fa-envelope"></span>
-                          <span class="text">lpw@example.com</span>
-                        </div>
-                      </div>
-                    </div>
-            
-                    <div class="right box">
-                      <h2>Contact us</h2>
-                      <div class="content">
-                        <form action="#">
-                          <div class="email">
-                            <div class="text">Email *</div>
-                            <input type="email" required>
-                          </div>
-                          <div class="msg">
-                            <div class="text">Message *</div>
-                           
-                          </div>
-                          <div class="btn">
-                            <button type="submit">Send</button>
-                          </div>
-                        </form>
-                      </div>
-                    </div>
-                </div>
-            </div>
-            
-            
-        </footer>
+        <%- include('footer.ejs') %>
     </div>
 
 

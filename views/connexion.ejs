@@ -4,19 +4,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/css/style.css">
     <title>Connection page</title>
 </head>
 <body>
-    <form method="post">
-        <div>
-            <label for="email">Votre email</label>
-            <input type="email" id="email" name="email">
+    <div class="containSite">
+
+        <div class="contentFormConn">
+            <div class="formandmsg">
+                <div class="msgForm box">
+                    <div>
+                        <a href="/connexion"><img class="logo" src="../public/images/house-key-g791c9de4e_1280.png" alt="logo"></a>
+                        <h4>Devenez propriétaire</h4>
+                    </div>
+                </div>
+                <div class="form box">
+                    <h2>S'identifier</h2>
+                    <p>Vous êtes nouveau <a href="/inscription">Créez un compte</a></p>
+                    <form method="post" class="">
+                        <div>
+                            <label for="email" class="text">Votre email</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+                        <div>
+                            <label for="password" class="text">Votre mot de passe</label>
+                            <input type="password" id="password" name="password">
+                        </div>
+                        <div>
+                            <input type="submit", value="Connexion">
+                        </div>
+                        <% if(message){ %>
+                            <div class="msgErreur"><%= message %> </div>
+                         <% }%>
+                        <div>
+                            <p><a href="/">Retourner à la page d'accueil</a></p>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
         </div>
-        <div>
-            <label for="password">Votre mot de passe</label>
-            <input type="password" id="password" name="password">
-        </div>
-        <input type="submit", value="Connexion">
-    </form>
+        
+    </div>
+    
 </body>
 </html>

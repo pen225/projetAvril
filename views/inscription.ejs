@@ -4,31 +4,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/css/style.css">
     <title>Register page</title>
 </head>
 <body>
-    <form method="post">
-        <div>
-            <label for="nom">Votre nom</label>
-            <input type="text" id="nom" name="nom">
+    <div class="containSite">
+
+        <div class="formInscription">
+            <h2>Inscrivez-Vous</h2>
+                    <p><a href="/">Retournez à la page d'accueil</a></p>
+            <form method="post">
+                <div>
+                    <label for="nom">Votre nom</label>
+                    <input type="text" id="nom" name="nom">
+                </div>
+                <div>
+                    <label for="prenom">Votre prenom</label>
+                    <input type="text" id="prenom" name="prenom">
+                </div>
+                <div>
+                    <label for="email">Votre email</label>
+                    <input type="email" id="email" name="email">
+                </div>
+                <div>
+                    <label for="password">Votre mot de passe</label>
+                    <input type="password" id="password" name="password">
+                </div>
+                <div>
+                    <label for="repeatPassword">Repetez votre mot de passe</label>
+                    <input type="password" id="repeatPassword" name="repeatPassword">
+                </div>
+                <div>
+                    <input type="submit", value="Enregistrer">
+                </div>
+            </form>
+    
         </div>
-        <div>
-            <label for="prenom">Votre prenom</label>
-            <input type="text" id="prenom" name="prenom">
-        </div>
-        <div>
-            <label for="email">Votre email</label>
-            <input type="email" id="email" name="email">
-        </div>
-        <div>
-            <label for="password">Votre mot de passe</label>
-            <input type="password" id="password" name="password">
-        </div>
-        <div>
-            <label for="repeatPassword">Repetez votre mot de passe</label>
-            <input type="password" id="repeatPassword" name="repeatPassword">
-        </div>
-        <input type="submit", value="Enregistrer">
-    </form>
+        
+    </div>
+    
 </body>
 </html>

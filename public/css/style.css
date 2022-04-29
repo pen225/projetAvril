@@ -4,6 +4,13 @@
     font-family: 'Tw Cen MT', sans-serif;
     box-sizing: border-box;
 }
+.msgErreur{
+    background: red;
+    color: white;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 20px;
+}
 .container{
     padding: 0 10%;
 }
@@ -27,7 +34,7 @@ nav{
     padding: 5px 0;
 }
 
-nav .logo{
+.logo{
     width: 120px;
     cursor: pointer;
 }
@@ -53,7 +60,7 @@ ul li a{
 ul li a::after{
     content: '';
     position: absolute;
-    background: rgb(255, 183, 0);
+    background: orange;
     bottom: 0px;
     right: 0px;
     width: 0%;
@@ -77,7 +84,6 @@ footer{
 
 .main-content{
     display: flex;
-    align-items: center;
 }
 
 .main-content .box{
@@ -100,44 +106,50 @@ position: relative;
     position: absolute;
     content: '';
     top: -10px;
-    height: 2px;
+    height: 3px;
     width: 100%;
-    background: #1a1a1a;
+    background: #222221;
 }
-.box .content:after{
-position: absolute;
-content: '';
-height: 2px;
-width: 15%;
-background: #f12020;
-top: -10px;
-}
+
+/* .box .content:after{
+    position: absolute;
+    content: '';
+    height: 2px;
+    width: 15%;
+    background: #f12020;
+    top: -10px;
+} */
 
 .left .content p{
     text-align: justify;
 }
+
 .left .content .social{
 margin: 20px 0 0 0;
 }
+
 .left .content .social a{
 padding: 0 2px;
 }
+
 .left .content .social a span{
-height: 40px;
-width: 40px;
-background: #1a1a1a;
-line-height: 40px;
-text-align: center;
-font-size: 18px;
-border-radius: 5px;
-transition: 0.3s;
+    height: 40px;
+    width: 40px;
+    background: #1a1a1a58;
+    line-height: 40px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: 0.3s;
 }
+
 .left .content .social a span:hover{
 background: orange;
 }
+
 .center .content .fas{
 font-size: 1.4375rem;
-background: #1a1a1a;
+background: #1a1a1a58;
 height: 45px;
 width: 45px;
 line-height: 45px;
@@ -145,7 +157,10 @@ text-align: center;
 border-radius: 50%;
 transition: 0.3s;
 cursor: pointer;
+color: #151515;
 }
+
+
 .center .content .fas:hover{
 background: orange;
 }
@@ -171,10 +186,11 @@ font-size: 1.0625rem;
 background: #151515;
 padding-left: 10px;
 border: 1px solid #222222;
+color: #fff;
 }
 .right form input:focus,
 .right form textarea:focus{
-outline-color: #3498db;
+outline-color: orange;
 }
 .right form input{
 height: 35px;
@@ -192,10 +208,11 @@ font-size: 1.0625rem;
 font-weight: 500;
 cursor: pointer;
 transition: .3s;
+color: white;
 }
-.right form .btn button:hover{
+/* .right form .btn button:hover{
 background: #000;
-}
+} */
 .bottom center{
 padding: 5px;
 font-size: 0.9375rem;
@@ -212,6 +229,7 @@ text-decoration: none;
 text-decoration: underline;
 }
 
+/*
 @media screen and (max-width: 900px) {
     footer{
       position: relative;
@@ -224,4 +242,121 @@ text-decoration: underline;
     .main-content .box{
       margin: 5px 0;
     }
+} */
+
+
+/* Style connexion */
+.contentFormConn{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+}
+
+.formandmsg{
+    display: flex;
+    width: 100%;
+}
+
+.formandmsg .msgForm{
+    display: flex;
+    align-items: center;
+}
+
+.msgForm div{
+   text-align: center;
+   width: 400px;
+}
+
+.msgForm h4{
+    color: #fff;
+    font-size:35px;
+    font-weight: 600;
+    text-transform: capitalize;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-shadow: 0px 2px 5px black;
+}
+
+.formandmsg .box{
+    flex-basis: 50%;
+    padding: 10px 20px;
+}
+
+.formandmsg .form{
+    background: #fff;
+    font-size: 1.2rem;
+    border-radius: 3px;
+}
+
+.formandmsg .form a{
+    color: rgb(9, 79, 243);
+}
+
+.formandmsg .form h2,p{
+    text-align: center;
+}
+
+.formandmsg .form h2{
+    font-size: 35px;
+    color: orange;
+    text-transform: none;
+    margin: 10px 0px;
+}
+.formandmsg .form p{
+   margin-bottom: 20px;
+}
+
+form div{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+form div label{
+    margin-bottom: 10px;
+}
+
+form input{
+    height: 45px;
+    outline: none;
+    background: #b3dbeb;
+    border: 1px solid #dae1e3;
+    font-size: 1.3rem;
+    padding: 0px 0px 0px 20px;
+    color: #151515;
+}
+
+form input[type = "submit"]{
+    width: 100%;
+    background-color: orange;
+    box-shadow: 0px 1px 5px rgb(129, 128, 128);
+    color: #fff;
+    border: none;
+    padding: 0%;
+    cursor: pointer;
+}
+
+/* Style Inscription */
+.formInscription{
+    background-color: rgba(255, 255, 255, 0.878);
+    width: 40%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 3px;
+    font-size: 1.2rem;
+}
+.formInscription form{
+   max-width: 100%;
+   padding: 20px;
+}
+
+.formInscription h2{
+    font-size: 35px;
+    color: orange;
+    text-transform: none;
+    text-align: center;
+    margin-top: 10px;
 }
