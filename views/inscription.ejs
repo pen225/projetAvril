@@ -14,25 +14,50 @@
             <h2>Inscrivez-Vous</h2>
                     <p><a href="/">Retournez à la page d'accueil</a></p>
             <form method="post">
+                <% if (message.nom) {  %>
+                    <p class="erreur">
+                        <%= message.nom.msg %>
+                    </p>
+                <% } %>
                 <div>
                     <label for="nom">Votre nom</label>
                     <input type="text" id="nom" name="nom">
                 </div>
+                <% if (message.prenom) {  %>
+                    <p class="erreur">
+                        <%= message.prenom.msg %>
+                    </p>
+                <% } %>
                 <div>
                     <label for="prenom">Votre prenom</label>
                     <input type="text" id="prenom" name="prenom">
                 </div>
+                <% if (message.email) {  %>
+                    <p class="erreur">
+                        <%= message.email.msg %>
+                    </p>
+                <% } %>
                 <div>
                     <label for="email">Votre email</label>
                     <input type="email" id="email" name="email">
                 </div>
+                <% if (message.password) {  %>
+                    <p class="erreur">
+                        <%= message.password.msg %>
+                    </p>
+                <% } %>
                 <div>
                     <label for="password">Votre mot de passe</label>
                     <input type="password" id="password" name="password">
                 </div>
+                <% if (message.repeatePassword) {  %>
+                    <p class="erreur">
+                        <%= message.repeatePassword.msg %>
+                    </p>
+                <% } %>
                 <div>
-                    <label for="repeatPassword">Repetez votre mot de passe</label>
-                    <input type="password" id="repeatPassword" name="repeatPassword">
+                    <label for="repeatePassword">Repetez votre mot de passe</label>
+                    <input type="password" id="repeatePassword" name="repeatePassword">
                 </div>
                 <div>
                     <input type="submit", value="Enregistrer">

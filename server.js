@@ -4,7 +4,8 @@ const router = require('./router/route');
 const app = express();
 const cookieParser = require('cookie-parser')
 const session = require('express-session');
-// let path = require('path')
+
+
 app.set('views', './views');
 app.set('view engine', 'ejs');
 app.use('/public', express.static('public'));
